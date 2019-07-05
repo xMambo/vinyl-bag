@@ -20,7 +20,13 @@ class Detail extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size="md-6">
+
+          <img src={this.state.book.image}>
+          </img>
+          </Col>
+          <Col size="md-6">
+          
             <Jumbotron>
               <h1>
                 {this.state.book.title} by {this.state.book.author}
@@ -29,7 +35,7 @@ class Detail extends Component {
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
+          <Col size="md-6">
             <article>
               <h1>Synopsis</h1>
               <p>

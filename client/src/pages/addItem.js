@@ -50,11 +50,15 @@ class Books extends Component {
       imagePreview = <img src={defaultImage} alt="default preview"/>
     }
     return (
-      <Container fluid>
+      <div>
+          <div className="banner"></div>
+          <Container fluid>
+
         <Row>
           <Col size="md-6">
-          <div className="banner"></div>
-              <h1>What Books Should I Read?</h1>
+
+              <h2>Add to Collection</h2>
+
             <form>
               <Input
                 value={this.state.title}
@@ -97,6 +101,8 @@ class Books extends Component {
           </Col>
         </Row>
       </Container>
+      </div>
+
     );
   }
 }
