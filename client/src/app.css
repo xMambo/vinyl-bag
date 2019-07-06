@@ -7,6 +7,17 @@ header {
     margin-bottom: 20px;
   }
 
+h1 {
+  font-size: 4em;
+  color: #fff;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 150px;
+  text-align: center;
+  text-shadow: 0 6px 12px rgba(98, 98, 98, 0.466), 0 3px 6px rgba(85, 85, 85, 0.555);;
+
+}
+
   nav {
     height: 50px;
   }

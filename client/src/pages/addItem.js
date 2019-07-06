@@ -6,12 +6,12 @@ import { Input, FormBtn } from "../components/Form";
 import defaultImage from "../assets/images.png";
 
 
-class Books extends Component {
+class AddAlbum extends Component {
   state = {
-    books: [],
+    albums: [],
     title: "",
-    author: "",
-    synopsis: "",
+    artist: "",
+    tracks: "",
     image: "",
   };
 
@@ -28,14 +28,14 @@ class Books extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
+    if (this.state.album && this.state.artist) {
+      API.saveAlbum({
         title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis,
+        artist: this.state.artist,
+        tracks: this.state.tracks,
         image: this.state.image
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadAlbums())
         .catch(err => console.log(err));
     }
   };
@@ -64,19 +64,19 @@ class Books extends Component {
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Title (required)"
+                placeholder="Album Title (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.artist}
                 onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
+                name="artist"
+                placeholder="Artist (required)"
               />
               <Input
-                value={this.state.synopsis}
+                value={this.state.tracks}
                 onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+                name="tracks"
+                placeholder="Track List (Optional)"
               />
               <Input
                 value={this.state.image}
@@ -85,10 +85,10 @@ class Books extends Component {
                 placeholder="image url (Optional)"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.artist && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit Album
               </FormBtn>
             </form>
           </Col>
@@ -107,4 +107,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default AddAlbum;
